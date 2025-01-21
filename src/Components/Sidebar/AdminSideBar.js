@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './Sidebar.module.css'; // Import the sidebar styles
+import styles from './SideBar.module.css'; // Import the sidebar styles
 
 const AdminSideBar = () => {
     const [isCollapsed, setIsCollapsed] = useState(false);
