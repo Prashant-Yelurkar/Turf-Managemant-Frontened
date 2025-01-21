@@ -1,0 +1,132 @@
+/* components/Footer.module.css */
+
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.socialIcon {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.socialIcon:hover {
+    color: #ff5c00;
+}
+
+.quickLinks {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.quickLinks ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quickLinks li {
+    margin: 10px 0;
+}
+
+.quickLinks a {
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.quickLinks a:hover {
+    color: #ff5c00;
+}
+
+.footerBottom {
+    font-size: 0.9rem;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+.footerBottom p {
+    margin: 5px 0;
+}
+
+.footerBottom a {
+    color: #ff5c00;
+    text-decoration: none;
+}
+
+.footerBottom a:hover {
+    color: white;
+}
+
+/* New contact section styles */
+.contactInfo {
+    margin-bottom: 20px;
+}
+
+.contactInfo p {
+    font-size: 1.1rem;
+    color: white;
+}
+
+.contactInfo a {
+    color: #ff5c00;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.contactInfo a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .footerTop {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .socialLinks {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .quickLinks {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footerBottom {
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .contactInfo {
+        text-align: center;
+    }
+}

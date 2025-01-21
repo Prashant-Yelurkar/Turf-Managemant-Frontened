@@ -1,0 +1,116 @@
+/* Container for the form */
+.formContainer {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Title of the form */
+.formTitle {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Form container style */
+.turfForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Group for input fields */
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Labels for input fields */
+.formGroup label {
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Styling for input fields */
+.formGroup input,
+.formGroup select {
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.formGroup input[type="time"],
+.formGroup select {
+    width: 100%;
+}
+
+/* Focus and hover states for input fields */
+.formGroup input:focus,
+.formGroup select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Input fields for numbers (price per hour) */
+.formGroup input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Button styling */
+.submitButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.submitButton:hover {
+    background-color: #45a049;
+}
+
+/* Error message styling */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .formContainer {
+        padding: 20px;
+    }
+
+    .formGroup input,
+    .formGroup select {
+        font-size: 14px;
+    }
+
+    .formTitle {
+        font-size: 24px;
+    }
+
+    .submitButton {
+        padding: 10px 20px;
+    }
+}

@@ -1,0 +1,98 @@
+/* BookingForm.css */
+
+/* Basic layout for the form */
+.booking-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styling for the labels and inputs */
+.booking-form label {
+    font-size: 1rem;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* Calendar container */
+.react-calendar {
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.booking-form button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.booking-form button:hover {
+    background-color: #45a049;
+}
+
+/* Available slots display */
+.slot-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.slot {
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.slot.available {
+    background-color: green;
+}
+
+.slot.unavailable {
+    background-color: red;
+}
+
+.slot:hover {
+    transform: scale(1.1);
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: bold;
+}

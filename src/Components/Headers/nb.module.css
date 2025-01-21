@@ -1,0 +1,109 @@
+/* components/Header.module.css */
+
+.header {
+    position: relative;
+    width: 100%;
+}
+
+/* Top Navbar (for Desktop) */
+.topNav {
+    background-color: #28a745;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+.topNav .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav a {
+    margin: 0 15px;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav a:hover {
+    color: #ff5c00;
+}
+
+/* Hamburger Menu (for mobile) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 25px;
+}
+
+.bar {
+    height: 4px;
+    width: 100%;
+    background-color: white;
+}
+
+/* Sidebar (for Mobile) */
+.sideNav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #28a745;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.sideNav.open {
+    left: 0;
+}
+
+.sideNavLinks {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+.sideNavLinks a {
+    padding: 15px 25px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    transition: background-color 0.3s;
+}
+
+.sideNavLinks a:hover {
+    background-color: #ff5c00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .topNav .nav {
+        display: none;
+        /* Hide top navbar links on mobile */
+    }
+
+    .hamburger {
+        display: flex;
+        /* Show hamburger on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .topNav .logo {
+        font-size: 1.5rem;
+        /* Reduce logo size on smaller screens */
+    }
+}

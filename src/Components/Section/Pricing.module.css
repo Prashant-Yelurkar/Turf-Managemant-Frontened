@@ -1,0 +1,110 @@
+/* components/Pricing.module.css */
+
+.pricing {
+    padding: 60px 20px;
+    background-color: #f3f3f3;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.sectionSubtitle {
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.planContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.pricingCard {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pricingCard:hover {
+    transform: translateY(-10px);
+}
+
+.planName {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.planPrice {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.planFeatures {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.feature {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.bookButton {
+    background-color: #ff5c00;
+    color: white;
+    font-size: 1.125rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.bookButton:hover {
+    background-color: #28a745;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sectionTitle {
+        font-size: 2rem;
+    }
+
+    .sectionSubtitle {
+        font-size: 1.1rem;
+    }
+
+    .pricingCard {
+        padding: 20px;
+    }
+
+    .planPrice {
+        font-size: 1.75rem;
+    }
+
+    .planName {
+        font-size: 1.5rem;
+    }
+}
