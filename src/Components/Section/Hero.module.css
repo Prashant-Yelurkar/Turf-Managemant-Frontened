@@ -1,12 +1,25 @@
 /* components/Hero.module.css */
 
-.hero {
-    background-image: url('https://t4.ftcdn.net/jpg/01/35/08/79/360_F_135087994_nC4df8GMv4NOAalL8lWpfN8OMQCie1uH.jpg');
-    /* Placeholder background image */
+.img {
+    background-image: url('https://img.freepik.com/premium-photo/minimal-soccer-photography-field-macro-high-quality-photoshoot_950002-88256.jpg');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     height: 100vh;
-    /* Full screen height */
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.hero {
+    /*Placeholderbackgroundimage*/
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /*Fullscreenheight*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,22 +33,31 @@
     padding: 20px;
     max-width: 80%;
     text-align: center;
+    background-color: rgb(0, 0, 0);
+    /*Fallbackcolor*/
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 3px solid #f1f1f1;
+    animation: fadeInUp 0.1s ease-out;
+    -webkit-animation: fadeInUp 0.1s ease-out;
 }
 
 .heroTitle {
     font-size: 3.5rem;
-    /* Larger font size */
+    /*Largerfontsize*/
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
     background: linear-gradient(45deg, #ff5c00, #28a745);
-    /* Gradient text */
+    /*Gradienttext*/
     -webkit-background-clip: text;
     color: transparent;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
-    /* Text shadow for more depth */
+    /*Textshadowformoredepth*/
     animation: fadeInUp 1.5s ease-out;
-    /* Animation */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-animation: fadeInUp 1.5s ease-out;
 }
 
 .heroSubtitle {
@@ -71,11 +93,13 @@
     0% {
         opacity: 0;
         transform: translateY(30px);
+        scale: 0;
     }
 
     100% {
         opacity: 1;
         transform: translateY(0);
+        scale: 1;
     }
 }
 

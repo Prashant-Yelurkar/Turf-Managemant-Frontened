@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import styles from './Login.module.css'; // Importing the CSS Module
 import { login } from '@/Actions/Controllers/AuthController';
 import { setAuthToken } from '@/Actions/Controllers/TokenControllers';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -26,6 +27,11 @@ const Login = () => {
             if (res.status == 201) {
                 setAuthToken(res.data.token)
                 router.push('/')
+            }
+            else {
+                // console.log(res.data.data.message);
+                alert(res.data.data.message)
+
             }
         } catch (error) {
             setError('Something went wrong. Please try again.');

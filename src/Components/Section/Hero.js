@@ -9,6 +9,7 @@ const Hero = () => {
     }
     return (
         <section className={styles.hero}>
+            <div className={styles.img}></div>
             <div className={styles.heroContent}>
                 <h1 className={styles.heroTitle}>Book Your Perfect Turf Ground with TURFOO</h1>
                 <p className={styles.heroSubtitle}>

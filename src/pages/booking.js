@@ -21,11 +21,21 @@ const BookingForm = () => {
 
     useEffect(() => {
         const fetchTurfs = async () => {
+            console.log("here");
+
             try {
                 setLoading(true);
                 const response = await getTurf();
                 if (response.status === 200) {
+                    if (response.data == undefined) {
+                        alert("Need to login again")
+                        router.push('/auth/login')
+                    }
+
                     setTurfList(response.data);
+                }
+                else {
+
                 }
             } catch (error) {
                 console.error('Error fetching turfs', error);

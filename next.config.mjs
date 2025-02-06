@@ -6,7 +6,8 @@ const nextConfig = {
         return [
             {
                 source: "/api/:path*",
-                destination: `https://turf-managemant-b-git-aac20e-prashant-erappa-yelurkars-projects.vercel.app/:path*`,
+                // destination: `https://turf-managemant-b-git-aac20e-prashant-erappa-yelurkars-projects.vercel.app/:path*`,
+                destination: `http://localhost:3001/:path*`,
             },
         ];
     },
@@ -21,7 +22,8 @@ const nextConfig = {
         {
             path: "/api",
             handler: createProxyMiddleware({
-                target: `https://turf-managemant-b-git-aac20e-prashant-erappa-yelurkars-projects.vercel.app/`,
+                // target: `https://turf-managemant-b-git-aac20e-prashant-erappa-yelurkars-projects.vercel.app/`,
+                target: `http://localhost:3001/`,
 
                 changeOrigin: true,
                 pathRewrite: {

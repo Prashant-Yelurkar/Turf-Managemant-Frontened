@@ -17,7 +17,7 @@ const Navbar = () => {
                 <nav className={styles.nav}>
                     <Link href="/">Home</Link>
                     <Link href="/booking">Book a Turf</Link>
-                    <Link href="/">Turf Details</Link>
+                    <Link href="#details">Turf Details</Link>
                     <Link href="#pricing">Pricing</Link>
                     <Link href="#testimonials">Testimonials</Link>
 

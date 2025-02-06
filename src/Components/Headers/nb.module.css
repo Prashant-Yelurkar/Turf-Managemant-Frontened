@@ -3,6 +3,9 @@
 .header {
     position: relative;
     width: 100%;
+    /* position: absolute;
+    top: 0;
+    left: 0; */
 }
 
 /* Top Navbar (for Desktop) */
@@ -13,7 +16,11 @@
     justify-content: space-between;
     align-items: center;
     color: white;
-    position: relative;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
 }
 
 .topNav .logo {
@@ -90,6 +97,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .topNav {
+        position: relative;
+    }
+
     .topNav .nav {
         display: none;
         /* Hide top navbar links on mobile */

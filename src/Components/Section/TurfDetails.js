@@ -36,7 +36,7 @@ const TurfDetails = () => {
         router.push('/booking')
     }
     return (
-        <section className={styles.turfDetails} id='turfDetails'>
+        <section className={styles.turfDetails} id='details'>
             <div className={styles.container}>
                 <h2 className={styles.sectionTitle}>Our Turf Grounds</h2>
                 <p className={styles.sectionSubtitle}>
