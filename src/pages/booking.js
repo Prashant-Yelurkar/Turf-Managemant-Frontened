@@ -5,6 +5,8 @@ import 'react-calendar/dist/Calendar.css';
 import MainLayout from '@/Components/Layout/MainLayout';
 import { useRouter } from 'next/router';
 import { checkTokens } from '@/Actions/Controllers/TokenControllers';
+import BookingConfirmation from '@/Components/Modal';
+import PaymentPage from '@/Components/Payment/PaymentModal';
 
 const BookingForm = () => {
 
@@ -19,6 +21,8 @@ const BookingForm = () => {
     const [loading, setLoading] = useState(false);
     const router = useRouter();
 
+    const [makePayment, setPayment] = useState(false)
+    const [confirmed, setConfirmed] = useState(false)
     useEffect(() => {
         const fetchTurfs = async () => {
             console.log("here");
@@ -31,7 +35,6 @@ const BookingForm = () => {
                         alert("Need to login again")
                         router.push('/auth/login')
                     }
-
                     setTurfList(response.data);
                 }
                 else {
@@ -82,16 +85,10 @@ const BookingForm = () => {
         }
     }, [selectedTurf, date]);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (!timeSlot) {
-            setMessage('Please select a time slot.');
-            return;
-        }
-
+    const handleSubmitFinal = async () => {
         try {
             setLoading(true);
-            const userId = 'user-id'; // Replace with actual user ID
+            const userId = 'user-id';
             const response = await BookSlot({
                 userId,
                 turfId: selectedTurf,
@@ -99,16 +96,27 @@ const BookingForm = () => {
                 time: timeSlot,
             });
             if (response.status == 201) {
-                setMessage(response.data.message);
 
+                setConfirmed(true)
                 fetchAvailableSlots()
             }
         } catch (error) {
             console.error('Error booking turf', error);
             setMessage('Error booking turf.');
         } finally {
+            setPayment(false)
             setLoading(false);
         }
+
+    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!timeSlot) {
+            setMessage('Please select a time slot.');
+            return;
+        }
+        setPayment(true)
+
     };
 
     const handleDateChange = (newDate) => {
@@ -199,6 +207,10 @@ const BookingForm = () => {
         slotAvailable: {
             backgroundColor: '#4CAF50',
         },
+        slotSelected: {
+            backgroundColor: 'yellow',
+            color: "red"
+        },
         slotUnavailable: {
             backgroundColor: '#FF5733',
         },
@@ -223,6 +235,10 @@ const BookingForm = () => {
 
     return (
         <MainLayout>
+            {
+
+                confirmed && <BookingConfirmation />
+            }
             <div style={styles.container}>
                 <h1 style={styles.heading}>Book Turf</h1>
                 <form onSubmit={handleSubmit} style={styles.form}>
@@ -272,6 +288,7 @@ const BookingForm = () => {
                                     style={{
                                         ...styles.slot,
                                         ...(slot.available ? styles.slotAvailable : styles.slotUnavailable),
+                                        ...(slot.time == timeSlot && slot.available ? styles.slotSelected : '')
                                     }}
                                     onClick={() => setTimeSlot(slot.time)}
                                     onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
@@ -294,6 +311,11 @@ const BookingForm = () => {
 
                 {message && <p style={styles.message}>{message}</p>}
             </div>
+            {
+                makePayment && <PaymentPage onPay={handleSubmitFinal} />
+            }
+
+
         </MainLayout>
     );
 };

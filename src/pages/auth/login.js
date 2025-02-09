@@ -29,7 +29,6 @@ const Login = () => {
                 router.push('/')
             }
             else {
-                // console.log(res.data.data.message);
                 alert(res.data.data.message)
 
             }
