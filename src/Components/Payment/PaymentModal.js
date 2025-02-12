@@ -17,7 +17,8 @@ const styles = {
         padding: "20px",
         borderRadius: "10px",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        width: "300px",
+        maxWidth: "400px",
+        width: "100%",
         textAlign: "center",
     },
     options: {
@@ -52,6 +53,16 @@ const styles = {
         cursor: "pointer",
         marginTop: "10px",
     },
+    back: {
+        background: "red",
+        color: "white",
+        padding: "10px",
+        border: "none",
+        borderRadius: "5px",
+        width: "100%",
+        cursor: "pointer",
+        marginTop: "10px",
+    }
 };
 
 const PaymentPage = (props) => {
@@ -65,6 +76,9 @@ const PaymentPage = (props) => {
             setError("Only Cash on Delivery is available at the moment.");
         }
     };
+    const handelBack = () => {
+        props.onBack()
+    }
 
     return (
         <div style={styles.container}>
@@ -73,7 +87,7 @@ const PaymentPage = (props) => {
                 <div style={styles.options}>
                     <label style={styles.option}>
                         <input type="radio" name="payment" value="cod" checked={selectedMethod === "cod"} onChange={() => setSelectedMethod("cod")} />
-                        <span>Cash on Delivery</span>
+                        <span>Cash</span>
                     </label>
                     <label style={{ ...styles.option, ...styles.disabled }}>
                         <input type="radio" name="payment" value="credit" disabled />
@@ -89,9 +103,14 @@ const PaymentPage = (props) => {
                     </label>
                 </div>
                 {error && <p style={styles.error}>{error}</p>}
-                <button onClick={handlePayment} style={styles.payButton}>
-                    Proceed to Pay
-                </button>
+                <div style={{ display: "flex", gap: "20px" }}>
+                    <button onClick={handelBack} style={styles.back}>
+                        Back
+                    </button>
+                    <button onClick={handlePayment} style={styles.payButton}>
+                        Proceed to Pay
+                    </button>
+                </div>
             </div>
         </div>
     );

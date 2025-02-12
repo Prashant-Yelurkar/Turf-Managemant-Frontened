@@ -233,6 +233,7 @@ const BookingForm = () => {
 
 
 
+
     return (
         <MainLayout>
             {
@@ -264,6 +265,7 @@ const BookingForm = () => {
                         Select Date
                     </label>
                     <Calendar
+
                         onChange={handleDateChange}
                         value={new Date(date)}
                         style={styles.calendar}
@@ -312,7 +314,7 @@ const BookingForm = () => {
                 {message && <p style={styles.message}>{message}</p>}
             </div>
             {
-                makePayment && <PaymentPage onPay={handleSubmitFinal} />
+                makePayment && <PaymentPage onPay={handleSubmitFinal} onBack={() => setPayment(false)} />
             }
 
 

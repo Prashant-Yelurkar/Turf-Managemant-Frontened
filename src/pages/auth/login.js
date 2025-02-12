@@ -26,7 +26,10 @@ const Login = () => {
             })
             if (res.status == 201) {
                 setAuthToken(res.data.token)
-                router.push('/')
+                if (res.data.role == 'ADMIN')
+                    router.push('/admin')
+                else
+                    router.push('/')
             }
             else {
                 alert(res.data.data.message)

@@ -9,7 +9,7 @@
 
 }
 
-.confirm-button {
+.confirmButton {
     padding: 10px 20px;
     background-color: #28a745;
     color: white;
@@ -34,6 +34,7 @@
     justify-content: center;
     align-items: center;
     z-index: 1;
+    padding: 20px;
 
 }
 
@@ -43,22 +44,22 @@
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    max-width: 400px;
     z-index: 1000;
 }
 
-.modal-title {
+.modalTitle {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.modal-text {
+.modalText {
     color: #666;
     margin-bottom: 20px;
 }
 
-.close-button {
+.closeButton {
     padding: 8px 16px;
     background-color: #dc3545;
     color: white;
@@ -67,8 +68,9 @@
     cursor: pointer;
     font-size: 14px;
     width: 100%;
+    background-color: red;
 }
 
-.close-button:hover {
+.closeButton:hover {
     background-color: #c82333;
 }
