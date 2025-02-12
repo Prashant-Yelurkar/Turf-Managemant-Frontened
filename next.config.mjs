@@ -6,8 +6,8 @@ const nextConfig = {
         return [
             {
                 source: "/api/:path*",
-                // destination: `https://turf-managemant-backened.vercel.app/:path*`,
-                destination: `http://localhost:3002/:path*`,
+                destination: `https://turf-managemant-backened.vercel.app/:path*`,
+                // destination: `http://localhost:3002/:path*`,
             },
         ];
     },
@@ -22,8 +22,8 @@ const nextConfig = {
         {
             path: "/api",
             handler: createProxyMiddleware({
-                // target: `https://turf-managemant-backened.vercel.app/`,
-                target: `http://localhost:3002/`,
+                target: `https://turf-managemant-backened.vercel.app/`,
+                // target: `http://localhost:3002/`,
 
                 changeOrigin: true,
                 pathRewrite: {
